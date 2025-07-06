@@ -1,0 +1,38 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: main.tex
+        compiler: xelatex
+        
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: CV-PDF
+        path: main.pdf
+        
+    - name: Release PDF
+      if: github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: main.pdf
+        tag_name: latest
+        name: Latest CV
+        body: Auto-generated PDF from LaTeX source
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
