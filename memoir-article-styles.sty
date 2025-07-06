@@ -1,0 +1,25 @@
+% Article styles for memoir class
+\ProvidesPackage{memoir-article-styles}
+
+% Basic article formatting
+\makeevenhead{headings}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
+\makeoddhead{headings}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
+\makeevenfoot{headings}{}{\small\thepage}{}
+\makeoddfoot{headings}{}{\small\thepage}{}
+
+% Section formatting
+\setsecheadstyle{\Large\bfseries}
+\setsubsecheadstyle{\large\bfseries}
+\setsubsubsecheadstyle{\normalsize\bfseries}
+
+% Spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% Title formatting
+\pretitle{\begin{center}\LARGE\bfseries}
+\posttitle{\end{center}}
+\preauthor{\begin{center}\large}
+\postauthor{\end{center}}
+\predate{\begin{center}\normalsize}
+\postdate{\end{center}}

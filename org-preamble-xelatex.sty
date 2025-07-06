@@ -1,0 +1,46 @@
+% Basic preamble for XeLaTeX
+\ProvidesPackage{org-preamble-xelatex}
+
+% Required packages
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+% Font setup
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Caladea}[
+  Path = /usr/share/fonts/truetype/caladea/,
+  Extension = .ttf,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]
+
+% Colors
+\definecolor{mycolor}{HTML}{0077BE}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=mycolor,
+  urlcolor=mycolor,
+  citecolor=mycolor,
+  filecolor=mycolor
+}
+
+% Page geometry
+\geometry{
+  letterpaper,
+  left=1.5in,
+  right=1.5in,
+  top=1.5in,
+  bottom=1.5in
+}
+
+% List formatting
+\setlist{noitemsep}
