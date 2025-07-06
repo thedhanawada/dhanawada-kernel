@@ -1,6 +1,20 @@
 % Article styles for memoir class
 \ProvidesPackage{memoir-article-styles}
 
+% Define kjh page style
+\makepagestyle{kjh}
+\makeevenhead{kjh}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
+\makeoddhead{kjh}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
+\makeevenfoot{kjh}{}{\small\thepage}{}
+\makeoddfoot{kjh}{}{\small\thepage}{}
+
+% Define kjhgit page style (for first page)
+\makepagestyle{kjhgit}
+\makeevenhead{kjhgit}{}{}{}
+\makeoddhead{kjhgit}{}{}{}
+\makeevenfoot{kjhgit}{}{}{}
+\makeoddfoot{kjhgit}{}{}{}
+
 % Basic article formatting
 \makeevenhead{headings}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
 \makeoddhead{headings}{\small\textsc{\myauthor}}{}{\small\textsc{\mytitle}}
