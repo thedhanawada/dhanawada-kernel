@@ -1,0 +1,294 @@
+%%% A template to produce a nice-looking Curriculum Vitae.
+%%% Originally by Kieran Healy <kjhealy@gmail.com>
+%%% Modified for Nirmal Dhanawada
+%%%
+%%% ------------------------------------------------------------------------
+%%% Requirements that are included in a modern tex distribution:
+%%% ------------------------------------------------------------------------
+%%% xelatex
+%%% fontspec.sty
+%%% hyperrref.sty
+%%% xunicode.sty
+%%% color.sty
+%%% url.sty
+%%% fancyhdr.sty
+%%% memoir.cls
+%%% fontawesome.sty
+%%%
+%%% 
+%%% 
+%%% ------------------------------------------------------------------------
+%%% Requirements from https://github.com/kjhealy/latex-custom-kjh
+%%% ------------------------------------------------------------------------
+%%% org-preamble-xelatex.sty
+%%% memoir-article-styles.sty
+%%%
+
+\documentclass[11pt,article,oneside]{memoir}   
+\usepackage{org-preamble-xelatex} 
+\usepackage{fontawesome,url}
+
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+\def\myauthor{Nirmala Rao Dhanawada}
+\def\mytitle{Curriculum Vitae}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{MTC Australia}
+\def\myaddress{Sydney, New South Wales}
+\def\myemail{nirmal@dhanawada.org}
+\def\myweb{dhanawada.org}
+\def\myphone{+61478864823}
+\def\mygithub{thedhanawada}
+\def\mylinkedin{thedhanawada}
+\def\myversion{1.0}
+\def\myrevision{March 2025}
+
+\def\myaffiliation{MTC Australia}
+\date{} % not used (revision control instead)
+\def\mykeywords{Nirmal, Dhanawada, Nirmal Dhanawada, CV, Resume, Technology, Salesforce}
+
+%%%------------------------------------------------------------------------  
+%%% Document
+%%%------------------------------------------------------------------------
+\begin{document}
+
+%% Choose fonts for use with xelatex
+\setromanfont[Mapping={tex-text}, Ligatures={Common}]{Caladea}
+
+\setsansfont[Mapping=tex-text,
+	Ligatures={Common}, 
+	Colour=AA0000]{Cabin}
+
+\setmonofont[Mapping=tex-text,Scale=0.85]{Fira Mono}
+
+\let\scheader\relax
+
+\newfontface\addressblock[Mapping={tex-text}, 
+	Numbers={OldStyle},
+	Ligatures={Common}]{Caladea}
+
+
+%%%------------------------------------------------------------------------
+%%% Local commands
+%%%------------------------------------------------------------------------
+
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+
+\renewcommand{\labelitemi}{~} 
+
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+%%%------------------------------------------------------------------------
+%%% Page layout
+%%%------------------------------------------------------------------------
+
+\pagestyle{kjh}
+\thispagestyle{kjhgit}
+
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+ \flushright {\footnotesize 
+ \href{https://en.wikipedia.org/wiki/Sydney}{Sydney, New South Wales} \\ 
+ \href{https://www.iso.org/iso-3166-country-codes.html}{Australia}}  
+\end{minipage}
+\hfill     
+\begin{minipage}[t]{2.2in}
+  \flushright \footnotesize \addressblock 
+  \href{tel:\myphone}{\myphone} \, \faPhone \\ 
+  \href{mailto:\myemail}{\myemail} \, \faEnvelope \\
+  \href{https://\myweb}{\myweb} \, \faGlobe \\
+  \href{https://github.com/\mygithub}{\mygithub} \, \faGithub \\
+  \href{https://www.linkedin.com/in/\mylinkedin}{\mylinkedin} \, \faLinkedin
+\end{minipage}
+
+\medskip
+
+%% Name 
+\noindent{\Large\mdseries NIRMALA RAO }\noindent{\Large\bfseries DHANAWADA}
+\reversemarginpar
+\bigskip       
+
+%% Summary
+\marginhead{\sffamily summary}
+
+\ind At MTC Australia, I architect and build service delivery platforms that enable our 450+ staff across 60 locations to support over 20,000 vulnerable people each year. My Salesforce-based systems, custom applications, and automated workflows transform complex service delivery into streamlined processes, allowing our teams to focus on creating life-changing opportunities rather than wrestling with technology.
+
+\medskip
+
+\ind I work with General Managers, Regional Managers, Employment Coaches, and frontline staff to deeply understand our services and how to build better infrastructure within our service delivery platforms that genuinely improves how we support clients. I collaborate with Finance and Marketing to ensure our platforms are compliant and financially sound, but my focus remains on creating technology that helps staff deliver better services to the vulnerable people we support.
+
+\bigskip
+
+%% Education
+\marginhead{\sffamily {{\vskip -0.23em} education}}
+
+\ind \textbf{\href{https://www.unimelb.edu.au/}{University of Melbourne}} \hfill 2020--2021 \\
+\ind \emph{Master of Information Technology (Computing)}
+
+\ind \hspace{0.35in} $\bullet$ Distinction Awardee, 2021 Dean's Honours List
+
+\ind \hspace{0.35in} $\bullet$ Recipient of Melbourne School of Engineering Scholarship, 2020
+
+\ind \hspace{0.35in} $\bullet$ Recipient of Leaders in Communities Award, 2021
+
+\ind \hspace{0.35in} $\bullet$ Key subjects: Software Project Management, Enterprise Architecture, ICT Infrastructure, Digital Ethics, and Technology Equity \& Management
+
+\bigskip
+
+\ind \textbf{\href{https://www.pondiuni.edu.in/}{Pondicherry University}} \hfill 2011--2015 \\
+\ind \emph{Bachelor of Computer Science and Engineering, \href{https://smvec.ac.in/}{Sri Manakula Vinayagar Engineering College}}
+
+\ind \hspace{0.35in} $\bullet$ Key subjects: Data Structures, Automata Languages and Computation, Object-Oriented Programming Languages and Design and Analysis of Algorithms
+
+\bigskip
+\newpage
+
+%% Technical Competencies - Core Expertise
+\marginhead{\sffamily {{\vskip 0.1em} core \newline expertise}}
+
+\noindent\textbf{Salesforce Ecosystem}\\[0.5ex]
+\noindent\hspace{0.5em}\textbf{Solution Architecture:} Comprehensive solutions spanning integrations, migrations, and custom development. Transforming business requirements into scalable, secure technical solutions.\\[0.5ex]
+\noindent\textbf{Development:} Apex, Lightning Web Components, Visualforce\\[0.5ex]
+\noindent\textbf{Configuration:} Security, Flows, declarative automation tools\\[0.5ex]
+\noindent\textbf{Integrations:} Marketo, AskNicely, FormAssembly, SMS Magic (APIs, middleware, Node.js)\\[0.5ex]
+\noindent\textbf{Data Management:} ETL with Talend, MS SQL extractions, data backup solutions
+
+\bigskip
+
+%% Technical Solution Domains
+\marginhead{\sffamily {{\vskip 0.1em} technical \newline solution \newline domains}}
+\vspace{0.5em}
+
+\noindent
+\begin{tabular}{@{}p{0.47\textwidth}p{0.47\textwidth}@{}}
+\textbf{Cloud \& Infrastructure:} & \textbf{Web Technologies:} \\
+AWS, Azure, Google Workspace, & React, Next.js, Tailwind CSS, \\
+Docker, Heroku, Firebase & Radix UI, WordPress, Jekyll \\[0.8ex]
+
+\textbf{Development \& APIs:} & \textbf{DevOps:} \\
+Node.js, JavaScript, TypeScript, & Git, Azure DevOps, GitHub Actions, \\
+.NET, C\#, Python, Google Gemini & Salesforce DevOps \\[0.8ex]
+
+\textbf{Databases \& ETL:} & \textbf{Enterprise Architecture:} \\
+MS SQL, Talend, Salesforce Connect & TOGAF, ITIL, COBIT \\
+\end{tabular}
+
+\bigskip
+
+%% Experience
+\marginhead{\sffamily {{\vskip 0.1em} professional \newline experience}}
+\vspace{0.5em}
+
+\ind \textbf{\href{https://mtcaustralia.com.au/}{MTC Australia}}, \emph{Senior IT Solutions Analyst} \hfill 2022.02--Present
+
+\ind \textbf{Flagship Project: Skills for Education and Employment (SEE) Student Management System (SMS)}
+
+\ind \hspace{0.35in} \textbf{Architected and delivered a service delivery platform} using \textbf{Apex}, \textbf{Salesforce Flow}, \textbf{custom Lightning components}, and \textbf{Visualforce} to digitize enrollment, compliance, attendance tracking, AVETMISS reporting, and program management.
+
+\ind \hspace{0.35in} \textbf{Business Impact}: Reduced manual work for trainers/assessors by \textbf{60\%} by replacing fragmented Excel/Email processes.
+
+\ind \hspace{0.35in} \textbf{Scale}: Supports \textbf{5,000+ participants} and \textbf{200+ staff} with real-time dashboards for attendance marking, compliance, and referrals.
+
+\ind \hspace{0.35in} \textbf{Integrations}: \textbf{Marketo} (Outreach Campaigns) and \textbf{Third-party SMS services} for assessment reminders and surveys.
+
+\ind \hspace{0.35in} \textbf{Data Infrastructure}: Built \textbf{ETL pipelines} to feed Salesforce data into BI tools for \textbf{forecasting} and \textbf{revenue analysis}.
+
+\ind \textbf{Spearheaded the technical design and implementation of mission-critical Salesforce solutions} for a diverse portfolio of educational and employment programs, including Skills for Education and Employment (SEE), Employability Skills Training (EST), Career Transition Assistance (CTA), and VET training programs. I additionally implemented solutions for Workforce Australia, Self Employment Assistance, National Disability Insurance Scheme (NDIS), and No Interest Loans Scheme (NILS). These solutions are used by 90\% of the organization's staff, demonstrating their widespread impact and adoption.
+
+\bigskip
+
+
+\ind \textbf{\href{https://www.wehi.edu.au/}{Walter and Eliza Hall Institute of Medical Research}}, \hfill 2021.07--2021.10
+\ind \emph{University Research Placement Student}
+
+\ind \hspace{0.35in} \textbf{Requirements Assessment}: Determined the requirements of the Blood Cells and Blood Cancer Division at WEHI and the Centre for Stem Cell Systems at the University of Melbourne.
+
+\ind \hspace{0.35in} \textbf{Implementation}: Executed the implementation, enabling the expansion of the application's functionality.
+
+\ind \hspace{0.35in} \textbf{Documentation}: Provided detailed technical documentation to facilitate future understanding and use by researchers.
+
+\ind \hspace{0.35in} \textbf{Client Collaboration}: Engaged in constructive discussions with the client to suggest ideas and improvements, leading to the application's expansion.
+
+\ind \hspace{0.35in} \textbf{Publication}: Compiled and published the new implementation on NECTAR Research Cloud, making the application accessible to researchers.
+
+\bigskip
+
+\ind \textbf{\href{https://www.victoriassecretandco.com/}{Victoria's Secret \& Co.}}, \emph{Senior Technology Analyst} \hfill 2016.10--2020.02
+
+\ind \hspace{0.35in} Recipient of Individual Achievement Award
+
+\ind \hspace{0.35in} \textbf{Accelerator Program}: Implemented and facilitated an internal corporate accelerator program, working with over 150 startups to validate technology feasibility and integration. Led collaboration with 12 startups to develop use cases for prototypes and successfully delivered them to the organization.
+
+\ind \hspace{0.35in} \textbf{Technology Integration}: Managed the integration of technology within the organization, partnering with a diverse range of stakeholders to ensure successful implementation.
+
+\ind \hspace{0.35in} \textbf{Innovation Framework}: Developed a framework to enable internal innovation and technology advancement, collaborating with 200+ associates from 10 business verticals and a project worth USD 650k.
+
+\bigskip
+
+\ind \textbf{\href{https://www.tcs.com/}{Tata Consultancy Services}}, \emph{Assistant System Engineer} \hfill 2015.06--2016.10
+
+\ind \hspace{0.35in} Recipient of Star of the Learners Group
+
+\ind \hspace{0.35in} \textbf{Technology Research}: Conducted research on emerging solutions, products, and startup opportunities in retail technologies and provided the organization with the necessary tools to stay ahead in the industry.
+
+\ind \hspace{0.35in} \textbf{Technology Implementation}: Applied new technologies to existing problems to create disruptive competitive advantages for retail enterprises.
+
+\ind \hspace{0.35in} \textbf{Technology Maintenance}: Ensured that the technology was always operational, maintained network code, managed enterprise sandboxes, and coordinated regular activities in the innovation space.
+%% Volunteering
+\marginhead{\sffamily {{\vskip 0.1em} volunteering}}
+\vspace{0.5em}
+
+\ind \textbf{\href{https://teachingforimpact.org/}{Teaching for Impact}}, \emph{Head of Technology} \hfill 2021.02--2024.04
+
+\ind \textbf{Technical Leadership:} Established web infrastructure, secured technology grants from Google, Salesforce, and Canva, and implemented Salesforce-based workflows to streamline operations.
+
+\ind \textbf{Digital Presence:} Developed and maintained the organization's website and managed a 120k AUD Google Ads budget, significantly increasing engagement at events.
+
+\ind \textbf{Team Management:} Coordinated 30+ volunteers while developing comprehensive marketing and brand strategies to enhance global awareness.
+
+\bigskip
+
+\ind \textbf{\href{https://www.redcross.org.au/}{Australian Red Cross}}, \emph{Store Coordinator} \hfill 2021.01--2022.05
+
+\ind \textbf{Key Contributions:} Provided customer service, created engaging visual merchandising displays, and managed donation preparation, directly contributing to increased sales and organizational funding.
+
+\bigskip
+%% Publication
+\marginhead{\sffamily {{\vskip 0.5em} publication}}
+\vspace{0.5em}
+\ind J. Amudhavel, D. Sathian, R. S. Raghav, \textbf{Nirmala Rao Dhanawada}, P. Dhavachelvan, and K. Prem Kumar. 2015. ``\href{https://dl.acm.org/doi/10.1145/2743065.2743121}{Big Data Scalability, Methods and its Implications: A Survey of Current Practice}.'' \emph{ICARCSET '15: Proceedings of the 2015 International Conference on Advanced Research in Computer Science Engineering \& Technology} Article No.: 56, pp. 1--5.
+
+\bigskip
+%% Featured Personal Projects
+\marginhead{\sffamily {{\vskip 0.1em} featured \newline personal \newline projects}}
+\vspace{0.5em}
+
+\ind \textbf{\href{https://github.com/thedhanawada/marketo-template-exporter}{Marketo Template Exporter}}
+
+\ind A Node.js tool developed overnight to rescue nearly 2,000 HTML email templates accumulated over years during a critical platform migration. Successfully preserved years of marketing assets by maintaining pristine HTML structure and visual fidelity of each template.
+
+\bigskip
+
+\ind \textbf{\href{https://github.com/thedhanawada/standupplus}{StandUp+}} \hfill \emph{\href{https://standupplus.dhanawada.org/}{Live Demo}}
+
+\ind An open-source tool for streamlining daily standups and tracking team progress. Built with React, TypeScript, Node.js, and MongoDB.
+
+\bigskip
+
+\ind \textbf{\href{https://github.com/thedhanawada/SpinOnSubmitJS}{SpinOnSubmitJS}} \hfill \emph{\href{https://www.npmjs.com/package/spinonsubmitjs}{NPM Package}}
+
+\ind A lightweight JavaScript library adding visual loading spinners to form submit buttons, providing intuitive user feedback during submission processes.
+
+\bigskip
+
+\end{document}
